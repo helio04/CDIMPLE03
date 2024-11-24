@@ -19,7 +19,7 @@ begin
 --Cancelando 100 --000010 1
 --Senha 101 --000001 0
     saida_d(5) <= (not a) and (not b) and (not c);
-    saida_d(4) <= (not a) and (not b) and c;
+    sauda_d(4) <= (not a) and (not b) and c;
     saida_d(3) <= (not a) and b and (not c);
     saida_d(2) <= (not a) and b and c;
     saida_d(1) <= a and (not b) and (not c);
