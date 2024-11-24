@@ -26,7 +26,28 @@ component leds is
 end component;
 	signal entradafsm, saidafsm : std_logic_vector(2 downto 0);
 	signal timer5, timer20, senhacompleta, senhaCerta : std_logic;
+	signal senhadisplay : std_logic_vector(5 downto 0);
+component displays is
+    port ( R: in std_logic_vector (5 downto 0);
+           N: in std_logic_vector (2 downto 0);
+           D1: out std_logic_vector (6 downto 0);
+           D0: out std_logic_vector (6 downto 0));
+end component;
+component T5 is
+    Port ( clkT5 : in STD_LOGIC;
+           resetT5 : in STD_LOGIC;
+           enableT5 : in STD_LOGIC;
+           timeoutT5 : out STD_LOGIC);
+end component;
+component T20 is
+    Port ( clkT20 : in STD_LOGIC;
+           resetT20 : in STD_LOGIC;
+           enableT20 : in STD_LOGIC;
+           timeoutT20 : out STD_LOGIC);
+end component;
+
 begin
 	ledsa : leds port map(saidafsm, ledr,ledg,ledb);
 	fsmc : FSM_Cofre port map(entradafsm(2), entradafsm(1), entradafsm(0),timer5, timer20, senhacompleta, senhaCerta,addsenha,start, saidafsm(2), saidafsm(1),saidafsm(0), outled);
-end architecture;
+	displaysa : displays port map(senhadisplay, saidafsm, hex1, hex0);
+	end architecture;

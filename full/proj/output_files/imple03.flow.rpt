@@ -1,5 +1,5 @@
 Flow report for imple03
-Sun Nov 24 15:29:34 2024
+Sun Nov 24 18:10:00 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,24 +40,24 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Nov 24 15:29:34 2024      ;
+; Flow Status                        ; Successful - Sun Nov 24 18:10:00 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; imple03                                    ;
 ; Top-level Entity Name              ; imple03                                    ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 25                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total GXB Receiver Channel PCS     ; 0                                          ;
-; Total GXB Receiver Channel PMA     ; 0                                          ;
-; Total GXB Transmitter Channel PCS  ; 0                                          ;
-; Total GXB Transmitter Channel PMA  ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/24/2024 15:29:29 ;
+; Start date & time ; 11/24/2024 18:09:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; imple03             ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 110073164282944.173247296911232 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 110073164282944.173248259909156 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
@@ -87,29 +87,29 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:04     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
-; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:01                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:01     ; 1.0                     ; 4707 MB             ; 00:00:01                           ;
+; Total                  ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-6UGCK06  ; Windows 7 ; 6.2        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++-------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                     ;
++------------------------+------------------+-----------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++------------------------+------------------+-----------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-6UGCK06  ; Windows 7 ; 6.2        ; x86_64         ;
++------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off imple03 -c imple03
+quartus_map --read_settings_files=on --write_settings_files=off imple03 -c imple03 --analysis_and_elaboration
 
 
 

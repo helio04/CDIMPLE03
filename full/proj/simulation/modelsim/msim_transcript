@@ -1,0 +1,86 @@
+# Reading D:/Engenharia/alteraquartus/modelsim_ase/tcl/vsim/pref.tcl 
+# do imple03_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\Engenharia\alteraquartus\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\Engenharia\alteraquartus\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/displays.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity displays
+# -- Compiling architecture main of displays
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/mux_4x1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity filtro_de_estados
+# -- Compiling architecture main of filtro_de_estados
+# -- Compiling entity mux_4x1
+# -- Compiling architecture main of mux_4x1
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/leds.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity leds
+# -- Compiling architecture saida_leds of leds
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/FSM_Cofre.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FSM_Cofre
+# -- Compiling architecture main of FSM_Cofre
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/conversor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder3
+# -- Compiling architecture log of adder3
+# -- Compiling entity Seg7
+# -- Compiling architecture display_Seg7_ckt of Seg7
+# -- Compiling entity conversor
+# -- Compiling architecture main of conversor
+# vcom -93 -work work {D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity imple03
+# -- Compiling architecture goiaba of imple03
+# 
+vsim work.imple03
+# vsim work.imple03 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.imple03(goiaba)
+# Loading work.leds(saida_leds)
+# Loading work.fsm_cofre(main)
+# Loading work.displays(main)
+# Loading work.conversor(main)
+# Loading work.adder3(log)
+# Loading work.seg7(display_seg7_ckt)
+# Loading work.mux_4x1(main)
+# Loading work.filtro_de_estados(main)
+wave create -driver freeze -pattern constant -value 1 -starttime 0us -endtime 1000us sim:/imple03/start
+wave create -driver freeze -pattern constant -value 1 -starttime 0us -endtime 1000us sim:/imple03/start
+# can't read "vsimPriv(.main_pane.wave.interior.cs.body.pw.wf:current_tree)": no such element in array
+wave create -pattern constant -value 000 -range 2 0 -starttime 0ps -endtime 1000ps sim:/imple03/entradafsm
+add wave -position insertpoint  \
+sim:/imple03/saidafsm
+run
+run
+run
+run
+run

@@ -1,0 +1,320 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Engenharia\2024.2\CD\CDIMPLE03\full\proj\simulation\modelsim
+Eadder3
+Z1 w1732463911
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\Engenharia\2024.2\CD\CDIMPLE03\full\proj\simulation\modelsim
+Z5 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/conversor.vhd
+Z6 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/conversor.vhd
+l0
+L6
+VUZeg40nf9oll6d19kSkkH1
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1732482626.643000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/conversor.vhd|
+Z10 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/conversor.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 >SdkBeZNT7O3zE8lBRlcn3
+!i10b 1
+Alog
+R2
+R3
+DEx4 work 6 adder3 0 22 UZeg40nf9oll6d19kSkkH1
+l13
+L11
+VYf99D7g><a:^laV`Q=a;=3
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 Vh2gBSzBEO:oEmSgJo?B]2
+!i10b 1
+Econversor
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L48
+V;zQQB0^jfhidl`=F00k=`1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 5jhmR>akzkcE5liCU5Yah3
+!i10b 1
+Amain
+R2
+R3
+DEx4 work 9 conversor 0 22 ;zQQB0^jfhidl`=F00k=`1
+l70
+L54
+VB?o4>QB5nU`c`:[@0zm5Y1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 hEF:i?g[ZK6zIjZ`LK@m21
+!i10b 1
+Edisplays
+Z13 w1732480417
+R2
+R3
+R4
+Z14 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/displays.vhd
+Z15 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/displays.vhd
+l0
+L4
+VThI0PGz3fKQzADj4@LGz91
+R7
+31
+Z16 !s108 1732482624.710000
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/displays.vhd|
+Z18 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/displays.vhd|
+R11
+R12
+!s100 6?eSdbkh;[bkV:5In6;IS2
+!i10b 1
+Amain
+R2
+R3
+DEx4 work 8 displays 0 22 ThI0PGz3fKQzADj4@LGz91
+l27
+L11
+V84>0XOYf@M=m^cCC99PKE1
+R7
+31
+R16
+R17
+R18
+R11
+R12
+!s100 og?M87<IQ>f;nno1bcZU51
+!i10b 1
+Efiltro_de_estados
+R1
+R2
+R3
+R4
+Z19 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/mux_4x1.vhd
+Z20 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/mux_4x1.vhd
+l0
+L6
+Vj=O_h[nQjg:[Y=Mc=lK6e3
+R7
+31
+Z21 !s108 1732482625.431000
+Z22 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/mux_4x1.vhd|
+Z23 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/mux_4x1.vhd|
+R11
+R12
+!s100 @JIA6]:R>UWM^_2?YV68@0
+!i10b 1
+Amain
+R2
+R3
+DEx4 work 17 filtro_de_estados 0 22 j=O_h[nQjg:[Y=Mc=lK6e3
+l12
+L11
+V:Ei7eg0cH`mFB;CD5nk1;3
+R7
+31
+R21
+R22
+R23
+R11
+R12
+!s100 ^Nd`MK2iT8@ifRg:_mJzo1
+!i10b 1
+Efsm_cofre
+Z24 w1732463910
+R2
+R3
+R4
+Z25 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/FSM_Cofre.vhd
+Z26 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/FSM_Cofre.vhd
+l0
+L4
+VZD[TVF;H@16hkgCd>7i353
+R7
+31
+Z27 !s108 1732482626.414000
+Z28 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/FSM_Cofre.vhd|
+Z29 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/FSM_Cofre.vhd|
+R11
+R12
+!s100 KI<LkngASBaI6`dXo4UP11
+!i10b 1
+Amain
+R2
+R3
+DEx4 work 9 fsm_cofre 0 22 ZD[TVF;H@16hkgCd>7i353
+l25
+L14
+V4c:0kmgEBRHAnRG`7MnUm0
+R7
+31
+R27
+R28
+R29
+R11
+R12
+!s100 <2Gk3:B:gW3ma9:2;^X[=1
+!i10b 1
+Eimple03
+Z30 w1732481175
+R2
+R3
+R4
+Z31 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd
+Z32 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd
+l0
+L6
+V]]nEM4EL9TH`F[?[`5z[03
+!s100 LYc`gIoaC_FKJnnN:P2o=1
+R7
+31
+!i10b 1
+Z33 !s108 1732482627.382000
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd|
+Z35 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd|
+R11
+R12
+Agoiaba
+R2
+R3
+DEx4 work 7 imple03 0 22 ]]nEM4EL9TH`F[?[`5z[03
+l36
+L13
+VMBULhB9OzYTaNX`b_8iEJ0
+!s100 FPCI:WYcKY>X?0hZVVEI[0
+R7
+31
+!i10b 1
+R33
+R34
+R35
+R11
+R12
+Eleds
+R1
+R2
+R3
+R4
+Z36 8D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/leds.vhd
+Z37 FD:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/leds.vhd
+l0
+L6
+Vm9dTBhBCB6LRJ=f<m3BG]0
+R7
+31
+Z38 !s108 1732482626.069000
+Z39 !s90 -reportprogress|300|-93|-work|work|D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/leds.vhd|
+Z40 !s107 D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/leds.vhd|
+R11
+R12
+!s100 dLajQAgIAl[59coIHDoei3
+!i10b 1
+Asaida_leds
+R2
+R3
+DEx4 work 4 leds 0 22 m9dTBhBCB6LRJ=f<m3BG]0
+l12
+L11
+VH4QSl^77>[HEG?aW7hR3`3
+R7
+31
+R38
+R39
+R40
+R11
+R12
+!s100 R5^A?5zSVfD79lXij1ZQe3
+!i10b 1
+Emux_4x1
+R1
+R2
+R3
+R4
+R19
+R20
+l0
+L22
+VC>HHD0X55YO:39RDO0K0^2
+R7
+31
+R21
+R22
+R23
+R11
+R12
+!s100 A4:6;K:dzXR35BL@i]6Re3
+!i10b 1
+Amain
+R2
+R3
+DEx4 work 7 mux_4x1 0 22 C>HHD0X55YO:39RDO0K0^2
+l37
+L28
+VZOJDX5PaKAkc[XYEW_n8l3
+R7
+31
+R21
+R22
+R23
+R11
+R12
+!s100 RmTFF@M;9ImI2DT^Tg<db0
+!i10b 1
+Eseg7
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L27
+VSZXib>9g`XWN?F]6JnK3f1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 zVkgiSfga]j1Y_4G@X;0P0
+!i10b 1
+Adisplay_seg7_ckt
+R2
+R3
+DEx4 work 4 seg7 0 22 SZXib>9g`XWN?F]6JnK3f1
+l33
+L32
+VoCncR^W3zYdP2S8;1^l2i0
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 5Bfo0^dYEl;zUOZJhcVRJ1
+!i10b 1

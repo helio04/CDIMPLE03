@@ -1,5 +1,5 @@
-Analysis & Synthesis report for imple03
-Sun Nov 24 15:29:34 2024
+Analysis & Elaboration report for imple03
+Sun Nov 24 18:10:00 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -7,15 +7,14 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "displays:displaysa|mux_4x1:mux0"
+  6. Port Connectivity Checks: "displays:displaysa|mux_4x1:mux1"
+  7. Port Connectivity Checks: "displays:displaysa|conversor:conv|Seg7:Seg7_1"
+  8. Port Connectivity Checks: "displays:displaysa|conversor:conv|adder3:add0"
+  9. Analysis & Elaboration Messages
 
 
 
@@ -39,31 +38,48 @@ applicable agreement for further details.
 
 
 +---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
+; Analysis & Elaboration Summary                                                  ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 24 15:29:34 2024      ;
+; Analysis & Elaboration Status      ; Successful - Sun Nov 24 18:10:00 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; imple03                                    ;
 ; Top-level Entity Name              ; imple03                                    ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 25                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total GXB Receiver Channel PCS     ; 0                                          ;
-; Total GXB Receiver Channel PMA     ; 0                                          ;
-; Total GXB Transmitter Channel PCS  ; 0                                          ;
-; Total GXB Transmitter Channel PMA  ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                  ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                  ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
 +------------------------------------+--------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
+; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
@@ -148,89 +164,68 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "displays:displaysa|mux_4x1:mux0" ;
++----------+-------+----------+-------------------------------+
+; Port     ; Type  ; Severity ; Details                       ;
++----------+-------+----------+-------------------------------+
+; c3       ; Input ; Info     ; Stuck at GND                  ;
+; c1[5..0] ; Input ; Info     ; Stuck at GND                  ;
+; c1[6]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[5..4] ; Input ; Info     ; Stuck at GND                  ;
+; c0[2..1] ; Input ; Info     ; Stuck at GND                  ;
+; c0[6]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[3]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[0]    ; Input ; Info     ; Stuck at VCC                  ;
++----------+-------+----------+-------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; imple03.vhd                      ; yes             ; User VHDL File  ; D:/Engenharia/2024.2/CD/CDIMPLE03/full/proj/imple03.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "displays:displaysa|mux_4x1:mux1" ;
++----------+-------+----------+-------------------------------+
+; Port     ; Type  ; Severity ; Details                       ;
++----------+-------+----------+-------------------------------+
+; c3       ; Input ; Info     ; Stuck at GND                  ;
+; c1[5..0] ; Input ; Info     ; Stuck at GND                  ;
+; c1[6]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[5..4] ; Input ; Info     ; Stuck at GND                  ;
+; c0[2..1] ; Input ; Info     ; Stuck at GND                  ;
+; c0[6]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[3]    ; Input ; Info     ; Stuck at VCC                  ;
+; c0[0]    ; Input ; Info     ; Stuck at VCC                  ;
++----------+-------+----------+-------------------------------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 25               ;
-; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; senhaentrada[0]  ;
-; Maximum fan-out          ; 1                ;
-; Total fan-out            ; 25               ;
-; Average fan-out          ; 0.50             ;
-+--------------------------+------------------+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "displays:displaysa|conversor:conv|Seg7:Seg7_1" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; s[3] ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |imple03                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 25   ; 0            ; |imple03            ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "displays:displaysa|conversor:conv|adder3:add0" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; a[3] ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Elaboration
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Nov 24 15:29:28 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off imple03 -c imple03
+    Info: Processing started: Sun Nov 24 18:09:59 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off imple03 -c imple03 --analysis_and_elaboration
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file displays.vhd
+    Info (12022): Found design unit 1: displays-main
+    Info (12023): Found entity 1: displays
 Info (12021): Found 2 design units, including 1 entities, in source file estado_senha.vhd
     Info (12022): Found design unit 1: estado_senha-Behavioral
     Info (12023): Found entity 1: estado_senha
@@ -274,47 +269,24 @@ Info (12021): Found 2 design units, including 1 entities, in source file imple03
     Info (12022): Found design unit 1: imple03-goiaba
     Info (12023): Found entity 1: imple03
 Info (12127): Elaborating entity "imple03" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at imple03.vhd(9): used implicit default value for signal "hex0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at imple03.vhd(9): used implicit default value for signal "hex1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at imple03.vhd(10): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at imple03.vhd(10): used implicit default value for signal "ledb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at imple03.vhd(10): used implicit default value for signal "ledg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex0[0]" is stuck at GND
-    Warning (13410): Pin "hex0[1]" is stuck at GND
-    Warning (13410): Pin "hex0[2]" is stuck at GND
-    Warning (13410): Pin "hex0[3]" is stuck at GND
-    Warning (13410): Pin "hex0[4]" is stuck at GND
-    Warning (13410): Pin "hex0[5]" is stuck at GND
-    Warning (13410): Pin "hex0[6]" is stuck at GND
-    Warning (13410): Pin "hex1[0]" is stuck at GND
-    Warning (13410): Pin "hex1[1]" is stuck at GND
-    Warning (13410): Pin "hex1[2]" is stuck at GND
-    Warning (13410): Pin "hex1[3]" is stuck at GND
-    Warning (13410): Pin "hex1[4]" is stuck at GND
-    Warning (13410): Pin "hex1[5]" is stuck at GND
-    Warning (13410): Pin "hex1[6]" is stuck at GND
-    Warning (13410): Pin "ledr" is stuck at GND
-    Warning (13410): Pin "ledb" is stuck at GND
-    Warning (13410): Pin "ledg" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "senhaentrada[0]"
-    Warning (15610): No output dependent on input pin "senhaentrada[1]"
-    Warning (15610): No output dependent on input pin "senhaentrada[2]"
-    Warning (15610): No output dependent on input pin "senhaentrada[3]"
-    Warning (15610): No output dependent on input pin "senhaentrada[4]"
-    Warning (15610): No output dependent on input pin "senhaentrada[5]"
-    Warning (15610): No output dependent on input pin "start"
-    Warning (15610): No output dependent on input pin "addsenha"
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 17 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4721 megabytes
-    Info: Processing ended: Sun Nov 24 15:29:34 2024
-    Info: Elapsed time: 00:00:06
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(27): used implicit default value for signal "entradafsm" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(28): used implicit default value for signal "timer5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(28): used implicit default value for signal "timer20" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(28): used implicit default value for signal "senhacompleta" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(28): used implicit default value for signal "senhaCerta" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at imple03.vhd(29): used implicit default value for signal "senhadisplay" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "leds" for hierarchy "leds:ledsa"
+Info (12128): Elaborating entity "FSM_Cofre" for hierarchy "FSM_Cofre:fsmc"
+Info (12128): Elaborating entity "displays" for hierarchy "displays:displaysa"
+Info (12128): Elaborating entity "conversor" for hierarchy "displays:displaysa|conversor:conv"
+Info (12128): Elaborating entity "adder3" for hierarchy "displays:displaysa|conversor:conv|adder3:add0"
+Info (12128): Elaborating entity "Seg7" for hierarchy "displays:displaysa|conversor:conv|Seg7:Seg7_0"
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "displays:displaysa|mux_4x1:mux1"
+Info (12128): Elaborating entity "filtro_de_estados" for hierarchy "displays:displaysa|mux_4x1:mux1|filtro_de_estados:seletor"
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Sun Nov 24 18:10:00 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

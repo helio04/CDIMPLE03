@@ -5,24 +5,398 @@ senhaentrada[2] => ~NO_FANOUT~
 senhaentrada[3] => ~NO_FANOUT~
 senhaentrada[4] => ~NO_FANOUT~
 senhaentrada[5] => ~NO_FANOUT~
-start => ~NO_FANOUT~
-addsenha => ~NO_FANOUT~
-hex0[0] <= hex0[0].DB_MAX_OUTPUT_PORT_TYPE
-hex0[1] <= hex0[1].DB_MAX_OUTPUT_PORT_TYPE
-hex0[2] <= hex0[2].DB_MAX_OUTPUT_PORT_TYPE
-hex0[3] <= hex0[3].DB_MAX_OUTPUT_PORT_TYPE
-hex0[4] <= hex0[4].DB_MAX_OUTPUT_PORT_TYPE
-hex0[5] <= hex0[5].DB_MAX_OUTPUT_PORT_TYPE
-hex0[6] <= hex0[6].DB_MAX_OUTPUT_PORT_TYPE
-hex1[0] <= hex1[0].DB_MAX_OUTPUT_PORT_TYPE
-hex1[1] <= hex1[1].DB_MAX_OUTPUT_PORT_TYPE
-hex1[2] <= hex1[2].DB_MAX_OUTPUT_PORT_TYPE
-hex1[3] <= hex1[3].DB_MAX_OUTPUT_PORT_TYPE
-hex1[4] <= hex1[4].DB_MAX_OUTPUT_PORT_TYPE
-hex1[5] <= hex1[5].DB_MAX_OUTPUT_PORT_TYPE
-hex1[6] <= hex1[6].DB_MAX_OUTPUT_PORT_TYPE
-ledr <= ledr.DB_MAX_OUTPUT_PORT_TYPE
-ledb <= ledb.DB_MAX_OUTPUT_PORT_TYPE
-ledg <= comb.DB_MAX_OUTPUT_PORT_TYPE
+start => FSM_Cofre:fsmc.L
+addsenha => FSM_Cofre:fsmc.A
+hex0[0] << displays:displaysa.D0[0]
+hex0[1] << displays:displaysa.D0[1]
+hex0[2] << displays:displaysa.D0[2]
+hex0[3] << displays:displaysa.D0[3]
+hex0[4] << displays:displaysa.D0[4]
+hex0[5] << displays:displaysa.D0[5]
+hex0[6] << displays:displaysa.D0[6]
+hex1[0] << displays:displaysa.D1[0]
+hex1[1] << displays:displaysa.D1[1]
+hex1[2] << displays:displaysa.D1[2]
+hex1[3] << displays:displaysa.D1[3]
+hex1[4] << displays:displaysa.D1[4]
+hex1[5] << displays:displaysa.D1[5]
+hex1[6] << displays:displaysa.D1[6]
+ledr << leds:ledsa.R
+ledb << leds:ledsa.B
+ledg << leds:ledsa.G
+outled << FSM_Cofre:fsmc.OutP
+
+
+|imple03|leds:ledsa
+N[0] => G.IN0
+N[0] => B.IN0
+N[0] => R.IN0
+N[1] => G.IN1
+N[1] => B.IN1
+N[2] => B.IN1
+N[2] => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+G <= G.DB_MAX_OUTPUT_PORT_TYPE
+B <= B.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|FSM_Cofre:fsmc
+S2 => N2.IN0
+S2 => N2.IN0
+S2 => N1.IN0
+S1 => N2.IN1
+S1 => N2.IN1
+S1 => N1.IN1
+S0 => N2.IN1
+S0 => N1.IN1
+S0 => N1.IN1
+S0 => N2.IN1
+S0 => N2.IN1
+S0 => N0.IN1
+T5 => N1.IN1
+T5 => N1.IN1
+T5 => N2.IN1
+T5 => N2.IN1
+T5 => N0.IN1
+T20 => N1.IN1
+C => N1.IN1
+C => N1.IN1
+S => N1.IN1
+A => N2.IN1
+A => N1.IN1
+L => N2.IN1
+L => N0.IN1
+L => N2.IN1
+N2 <= N2.DB_MAX_OUTPUT_PORT_TYPE
+N1 <= N1.DB_MAX_OUTPUT_PORT_TYPE
+N0 <= N0.DB_MAX_OUTPUT_PORT_TYPE
+OutP <= OutP.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa
+R[0] => conversor:conv.R[0]
+R[1] => conversor:conv.R[1]
+R[2] => conversor:conv.R[2]
+R[3] => conversor:conv.R[3]
+R[4] => conversor:conv.R[4]
+R[5] => conversor:conv.R[5]
+N[0] => mux_4x1:mux1.N[0]
+N[0] => mux_4x1:mux0.N[0]
+N[1] => mux_4x1:mux1.N[1]
+N[1] => mux_4x1:mux0.N[1]
+N[2] => mux_4x1:mux1.N[2]
+N[2] => mux_4x1:mux0.N[2]
+D1[0] <= mux_4x1:mux1.Z[0]
+D1[1] <= mux_4x1:mux1.Z[1]
+D1[2] <= mux_4x1:mux1.Z[2]
+D1[3] <= mux_4x1:mux1.Z[3]
+D1[4] <= mux_4x1:mux1.Z[4]
+D1[5] <= mux_4x1:mux1.Z[5]
+D1[6] <= mux_4x1:mux1.Z[6]
+D0[0] <= mux_4x1:mux0.Z[0]
+D0[1] <= mux_4x1:mux0.Z[1]
+D0[2] <= mux_4x1:mux0.Z[2]
+D0[3] <= mux_4x1:mux0.Z[3]
+D0[4] <= mux_4x1:mux0.Z[4]
+D0[5] <= mux_4x1:mux0.Z[5]
+D0[6] <= mux_4x1:mux0.Z[6]
+
+
+|imple03|displays:displaysa|conversor:conv
+R[0] => Seg7:Seg7_0.S[0]
+R[1] => adder3:add2.A[0]
+R[2] => adder3:add1.A[0]
+R[3] => adder3:add0.A[0]
+R[4] => adder3:add0.A[1]
+R[5] => adder3:add0.A[2]
+M1[0] <= Seg7:Seg7_1.D[0]
+M1[1] <= Seg7:Seg7_1.D[1]
+M1[2] <= Seg7:Seg7_1.D[2]
+M1[3] <= Seg7:Seg7_1.D[3]
+M1[4] <= Seg7:Seg7_1.D[4]
+M1[5] <= Seg7:Seg7_1.D[5]
+M1[6] <= Seg7:Seg7_1.D[6]
+M0[0] <= Seg7:Seg7_0.D[0]
+M0[1] <= Seg7:Seg7_0.D[1]
+M0[2] <= Seg7:Seg7_0.D[2]
+M0[3] <= Seg7:Seg7_0.D[3]
+M0[4] <= Seg7:Seg7_0.D[4]
+M0[5] <= Seg7:Seg7_0.D[5]
+M0[6] <= Seg7:Seg7_0.D[6]
+
+
+|imple03|displays:displaysa|conversor:conv|adder3:add0
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN1
+A[0] => S.IN1
+A[0] => S.IN0
+A[0] => S.IN1
+A[1] => S.IN0
+A[1] => S.IN0
+A[1] => S.IN1
+A[1] => S.IN0
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN0
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|conversor:conv|adder3:add1
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN1
+A[0] => S.IN1
+A[0] => S.IN0
+A[0] => S.IN1
+A[1] => S.IN0
+A[1] => S.IN0
+A[1] => S.IN1
+A[1] => S.IN0
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN0
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|conversor:conv|adder3:add2
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN0
+A[0] => S.IN1
+A[0] => S.IN1
+A[0] => S.IN0
+A[0] => S.IN1
+A[1] => S.IN0
+A[1] => S.IN0
+A[1] => S.IN1
+A[1] => S.IN0
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN1
+A[2] => S.IN0
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+A[3] => S.IN1
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|conversor:conv|Seg7:Seg7_0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[1] => D.IN0
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN0
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN0
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN0
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+D[0] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[4] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[5] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[6] <= D.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|conversor:conv|Seg7:Seg7_1
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[0] => D.IN0
+S[1] => D.IN0
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN0
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN1
+S[1] => D.IN0
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN0
+S[2] => D.IN1
+S[2] => D.IN1
+S[2] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+S[3] => D.IN1
+D[0] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[4] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[5] <= D.DB_MAX_OUTPUT_PORT_TYPE
+D[6] <= D.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|mux_4x1:mux1
+C3[0] => Z.IN1
+C3[1] => Z.IN1
+C3[2] => Z.IN1
+C3[3] => Z.IN1
+C3[4] => Z.IN1
+C3[5] => Z.IN1
+C3[6] => Z.IN1
+C2[0] => Z.IN1
+C2[1] => Z.IN1
+C2[2] => Z.IN1
+C2[3] => Z.IN1
+C2[4] => Z.IN1
+C2[5] => Z.IN1
+C2[6] => Z.IN1
+C1[0] => Z.IN1
+C1[1] => Z.IN1
+C1[2] => Z.IN1
+C1[3] => Z.IN1
+C1[4] => Z.IN1
+C1[5] => Z.IN1
+C1[6] => Z.IN1
+C0[0] => Z.IN1
+C0[1] => Z.IN1
+C0[2] => Z.IN1
+C0[3] => Z.IN1
+C0[4] => Z.IN1
+C0[5] => Z.IN1
+C0[6] => Z.IN1
+N[0] => filtro_de_estados:seletor.N[0]
+N[1] => filtro_de_estados:seletor.N[1]
+N[2] => filtro_de_estados:seletor.N[2]
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[4] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[5] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[6] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|mux_4x1:mux1|filtro_de_estados:seletor
+N[0] => F.IN1
+N[0] => F.IN1
+N[0] => F.IN1
+N[1] => F.IN0
+N[1] => F.IN0
+N[2] => F.IN1
+N[2] => F.IN1
+F[0] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[1] <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|mux_4x1:mux0
+C3[0] => Z.IN1
+C3[1] => Z.IN1
+C3[2] => Z.IN1
+C3[3] => Z.IN1
+C3[4] => Z.IN1
+C3[5] => Z.IN1
+C3[6] => Z.IN1
+C2[0] => Z.IN1
+C2[1] => Z.IN1
+C2[2] => Z.IN1
+C2[3] => Z.IN1
+C2[4] => Z.IN1
+C2[5] => Z.IN1
+C2[6] => Z.IN1
+C1[0] => Z.IN1
+C1[1] => Z.IN1
+C1[2] => Z.IN1
+C1[3] => Z.IN1
+C1[4] => Z.IN1
+C1[5] => Z.IN1
+C1[6] => Z.IN1
+C0[0] => Z.IN1
+C0[1] => Z.IN1
+C0[2] => Z.IN1
+C0[3] => Z.IN1
+C0[4] => Z.IN1
+C0[5] => Z.IN1
+C0[6] => Z.IN1
+N[0] => filtro_de_estados:seletor.N[0]
+N[1] => filtro_de_estados:seletor.N[1]
+N[2] => filtro_de_estados:seletor.N[2]
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[4] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[5] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[6] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|imple03|displays:displaysa|mux_4x1:mux0|filtro_de_estados:seletor
+N[0] => F.IN1
+N[0] => F.IN1
+N[0] => F.IN1
+N[1] => F.IN0
+N[1] => F.IN0
+N[2] => F.IN1
+N[2] => F.IN1
+F[0] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[1] <= F.DB_MAX_OUTPUT_PORT_TYPE
 
 
